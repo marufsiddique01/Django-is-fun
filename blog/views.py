@@ -1,9 +1,9 @@
 from django.shortcuts import render
-
+from .models import Post
 #from django.http import HttpResponse
 
 #dummy posts >>
-posts = [
+'''posts = [
 	{
 	'author': 'Maruf',
 	'title': 'Blog post 1',
@@ -16,7 +16,7 @@ posts = [
 	'content': 'Second post content',
 	'date_posted': 'August 28, 2018',
 	}
-]
+]'''
 
 
 #loading a template>>
@@ -36,7 +36,7 @@ def about(request):
 def post(request):
 	#creating context dictionary >
 	context = {
-		'posts' : posts
+		'posts' : Post.objects.all()
 		}
 		#posts is accessible from template>>
 	return render(request, 'blog/post.html', context , {'title' : 'Post'}) 
