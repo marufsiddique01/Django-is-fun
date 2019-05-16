@@ -22,25 +22,25 @@ posts = [
 #loading a template>>
 def home(request):
 
-	context = {
+	'''context = {
 		'posts' : posts
-		}
+		}'''
 
-	return render(request, 'blog/home.html', context)
+	return render(request, 'blog/home.html' , {'title' : 'Home'})
 	#return HttpResponse('<h1>Blog Home</h1>')
 
 def about(request):
 	return render(request, 'blog/about.html', {'title' : 'About'})
 	#return HttpResponse('<h1>About Us</h1>')
 
-'''def post(request):
+def post(request):
 	#creating context dictionary >
 	context = {
 		'posts' : posts
 		}
 		#posts is accessible from template>>
-	return render(request, 'blog/post.html', context) 
-	'''
+	return render(request, 'blog/post.html', context , {'title' : 'Post'}) 
+
 
 # blog -> templates -> blog -> template.html
 
